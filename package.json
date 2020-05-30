@@ -26,8 +26,12 @@
     "cypress": "^4.7.0",
     "cypress-axe": "^0.8.1",
     "cypress-plugin-snapshots": "^1.3.0",
+    "eslint-plugin-cypress": "^2.11.1",
+    "eslint-plugin-prettier": "^3.1.3",
+    "gatsby-plugin-eslint": "^2.0.8",
     "prettier": "2.0.5",
-    "start-server-and-test": "^1.11.0"
+    "start-server-and-test": "^1.11.0",
+    "typescript": "^3.9.3"
   },
   "keywords": [
     "gatsby"
@@ -36,7 +40,10 @@
   "scripts": {
     "build": "gatsby build",
     "develop": "gatsby develop",
-    "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
+    "lint": "eslint --ext .js,jsx,ts,tsx .",
+    "format": "npm run format:js && npm run format:doc",
+    "format:js": "npm run lint -- --fix",
+    "format:doc": "prettier --write \"**/*.{json,md}\"",
     "start": "npm run develop",
     "serve": "gatsby serve",
     "clean": "gatsby clean",

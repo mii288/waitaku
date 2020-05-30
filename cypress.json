@@ -1,4 +1,12 @@
 {
   "baseUrl": "http://localhost:8000/",
-  "integrationFolder": "e2e"
+  "env": {
+    "cypress-plugin-snapshots": {
+      "imageConfig": {
+        "thresholdType": "pixel"
+      }
+    }
+  },
+  "integrationFolder": "e2e",
+  "ignoreTestFiles": ["**/__snapshots__/*", "**/__image_snapshots__/*"]
 }
